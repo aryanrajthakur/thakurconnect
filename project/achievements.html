@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - VVRS SkillConnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <button class="back-btn" onclick="history.back()">←</button>
+            <h1>🏆 Achievements</h1>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </header>
+
+        <!-- Achievement Stats -->
+        <div class="achievement-stats">
+            <div class="stat-card">
+                <div class="stat-icon">🏆</div>
+                <div class="stat-info">
+                    <span class="stat-number" id="totalBadges">0</span>
+                    <span class="stat-label">Badges Earned</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⚡</div>
+                <div class="stat-info">
+                    <span class="stat-number" id="currentStreak">0</span>
+                    <span class="stat-label">Day Streak</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">📈</div>
+                <div class="stat-info">
+                    <span class="stat-number" id="totalPoints">0</span>
+                    <span class="stat-label">Total Points</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Achievements Grid -->
+        <div class="achievements-grid" id="achievementsGrid">
+            <!-- Achievements will be populated by JavaScript -->
+        </div>
+
+        <!-- Progress Section -->
+        <div class="progress-section">
+            <h3>📊 Your Progress</h3>
+            <div class="progress-items" id="progressItems">
+                <!-- Progress items will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="peoplefinder.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span class="nav-label">Find</span>
+        </a>
+        <a href="freelance.html" class="nav-item">
+            <span class="nav-icon">💼</span>
+            <span class="nav-label">Work</span>
+        </a>
+        <a href="gamezone.html" class="nav-item">
+            <span class="nav-icon">🎮</span>
+            <span class="nav-label">Games</span>
+        </a>
+        <a href="teachers.html" class="nav-item">
+            <span class="nav-icon">🧑‍🏫</span>
+            <span class="nav-label">Teachers</span>
+        </a>
+    </nav>
+
+    <script src="main.js"></script>

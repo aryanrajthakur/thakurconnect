@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameZone - VVRS SkillConnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <button class="back-btn" onclick="history.back()">←</button>
+            <h1>🎮 GameZone</h1>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </header>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchGameTab('tournaments')">🏆 Tournaments</button>
+            <button class="tab-btn" onclick="switchGameTab('squads')">👥 Squad Finder</button>
+            <button class="tab-btn" onclick="switchGameTab('host')">🎯 Host Event</button>
+        </div>
+
+        <!-- Tournaments Tab -->
+        <div class="tab-content active" id="tournamentsTab">
+            <div class="tournaments-section">
+                <div class="section-header">
+                    <h3>🏆 Active Tournaments</h3>
+                    <select id="gameFilter" onchange="filterTournaments()">
+                        <option value="">All Games</option>
+                        <option value="pubg">PUBG Mobile</option>
+                        <option value="freefire">Free Fire</option>
+                        <option value="cod">Call of Duty</option>
+                        <option value="valorant">Valorant</option>
+                        <option value="clash-royale">Clash Royale</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="tournaments-grid" id="tournamentsGrid">
+                    <div class="no-tournaments">
+                        <div class="empty-state">
+                            <h3>🏆 No Tournaments Yet</h3>
+                            <p>Be the first to host a tournament and bring gamers together!</p>
+                            <button class="btn btn-primary" onclick="switchGameTab('host')">Host Tournament</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Squad Finder Tab -->
+        <div class="tab-content" id="squadsTab">
+            <div class="squads-section">
+                <div class="squad-form-container">
+                    <h3>👥 Find Your Squad</h3>
+                    <form id="squadForm" class="squad-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="gamerName">Gamer Name *</label>
+                                <input type="text" id="gamerName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="gameSelect">Game *</label>
+                                <select id="gameSelect" required>
+                                    <option value="">Select Game</option>
+                                    <option value="pubg">PUBG Mobile</option>
+                                    <option value="freefire">Free Fire</option>
+                                    <option value="cod">Call of Duty</option>
+                                    <option value="valorant">Valorant</option>
+                                    <option value="clash-royale">Clash Royale</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="gameUID">Game UID *</label>
+                                <input type="text" id="gameUID" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="playerRole">Role *</label>
+                                <select id="playerRole" required>
+                                    <option value="">Select Role</option>
+                                    <option value="assault">Assault</option>
+                                    <option value="support">Support</option>
+                                    <option value="sniper">Sniper</option>
+                                    <option value="igl">IGL (Leader)</option>
+                                    <option value="any">Any Role</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="playTime">Preferred Play Time</label>
+                            <input type="text" id="playTime" placeholder="e.g., Evening 6-9 PM">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="squadContact">Contact (WhatsApp) *</label>
+                            <input type="text" id="squadContact" placeholder="+91 9876543210" required>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">🔍 Find Squad</button>
+                    </form>
+                </div>
+                
+                <div class="squads-list" id="squadsList">
+                    <h3>🎮 Looking for Squad</h3>
+                    <div class="no-squads">
+                        <p>No squad requests yet. Be the first!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Host Event Tab -->
+        <div class="tab-content" id="hostTab">
+            <div class="host-section">
+                <h3>🎯 Host Tournament</h3>
+                <form id="tournamentForm" class="tournament-form">
+                    <div class="form-group">
+                        <label for="tournamentTitle">Tournament Title *</label>
+                        <input type="text" id="tournamentTitle" placeholder="e.g., VVRS PUBG Championship" required>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tournamentGame">Game *</label>
+                            <select id="tournamentGame" required>
+                                <option value="">Select Game</option>
+                                <option value="pubg">PUBG Mobile</option>
+                                <option value="freefire">Free Fire</option>
+                                <option value="cod">Call of Duty</option>
+                                <option value="valorant">Valorant</option>
+                                <option value="clash-royale">Clash Royale</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="hostName">Host Name *</label>
+                            <input type="text" id="hostName" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tournamentDate">Date *</label>
+                            <input type="date" id="tournamentDate" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tournamentTime">Time *</label>
+                            <input type="time" id="tournamentTime" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="entryFee">Entry Fee (₹)</label>
+                            <input type="number" id="entryFee" placeholder="0">
+                        </div>
+                        <div class="form-group">
+                            <label for="prizePool">Prize Pool (₹)</label>
+                            <input type="number" id="prizePool" placeholder="500">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="tournamentRules">Rules & Format *</label>
+                        <textarea id="tournamentRules" placeholder="Describe tournament format, rules, and requirements..." rows="4" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="hostContact">Contact (WhatsApp) *</label>
+                        <input type="text" id="hostContact" placeholder="+91 9876543210" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">🚀 Host Tournament</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="peoplefinder.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span class="nav-label">Find</span>
+        </a>
+        <a href="freelance.html" class="nav-item">
+            <span class="nav-icon">💼</span>
+            <span class="nav-label">Work</span>
+        </a>
+        <a href="gamezone.html" class="nav-item active">
+            <span class="nav-icon">🎮</span>
+            <span class="nav-label">Games</span>
+        </a>
+        <a href="teachers.html" class="nav-item">
+            <span class="nav-icon">🧑‍🏫</span>
+            <span class="nav-label">Teachers</span>
+        </a>
+    </nav>
+
+    <script src="main.js"></script>

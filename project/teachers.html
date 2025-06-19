@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teachers Directory - VVRS SkillConnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <button class="back-btn" onclick="history.back()">←</button>
+            <h1>🧑‍🏫 Teachers Directory</h1>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </header>
+
+        <!-- Search Section -->
+        <div class="search-section">
+            <div class="search-bar">
+                <input type="text" id="teacherSearch" placeholder="Search teachers by name or subject..." oninput="searchTeachers()">
+                <button class="search-btn">🔍</button>
+            </div>
+        </div>
+
+        <!-- Teachers List -->
+        <div class="teachers-list" id="teachersList">
+            <!-- Teachers will be populated by JavaScript -->
+        </div>
+
+        <!-- Emergency Contact -->
+        <div class="emergency-section">
+            <h3>🚨 Emergency Contact</h3>
+            <div class="emergency-card">
+                <div class="emergency-info">
+                    <h4>Principal, VVRS Purnea</h4>
+                    <p>For urgent matters and emergencies</p>
+                </div>
+                <a href="tel:+919204068913" class="btn btn-emergency">📞 Call Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="peoplefinder.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span class="nav-label">Find</span>
+        </a>
+        <a href="freelance.html" class="nav-item">
+            <span class="nav-icon">💼</span>
+            <span class="nav-label">Work</span>
+        </a>
+        <a href="gamezone.html" class="nav-item">
+            <span class="nav-icon">🎮</span>
+            <span class="nav-label">Games</span>
+        </a>
+        <a href="teachers.html" class="nav-item active">
+            <span class="nav-icon">🧑‍🏫</span>
+            <span class="nav-label">Teachers</span>
+        </a>
+    </nav>
+
+    <script src="main.js"></script>

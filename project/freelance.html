@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelance Hub - VVRS SkillConnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <button class="back-btn" onclick="history.back()">←</button>
+            <h1>💼 Freelance Hub</h1>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </header>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" onclick="switchTab('offer')">🎯 Offer Service</button>
+            <button class="tab-btn" onclick="switchTab('browse')">🔍 Browse Services</button>
+        </div>
+
+        <!-- Offer Service Tab -->
+        <div class="tab-content active" id="offerTab">
+            <div class="form-container">
+                <h3>🚀 Offer Your Service</h3>
+                <form id="serviceForm" class="service-form">
+                    <div class="form-group">
+                        <label for="serviceName">Your Name *</label>
+                        <input type="text" id="serviceName" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="serviceTitle">Service Title *</label>
+                        <input type="text" id="serviceTitle" placeholder="e.g., Professional Video Editing" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="serviceCategory">Category *</label>
+                        <select id="serviceCategory" required>
+                            <option value="">Select Category</option>
+                            <option value="video-editing">📹 Video Editing</option>
+                            <option value="photo-editing">📸 Photo Editing</option>
+                            <option value="graphic-design">🎨 Graphic Design</option>
+                            <option value="study-help">📚 Study Help</option>
+                            <option value="game-coaching">🎮 Game Coaching</option>
+                            <option value="content-writing">✍️ Content Writing</option>
+                            <option value="social-media">📱 Social Media</option>
+                            <option value="other">🔧 Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="serviceDescription">Description *</label>
+                        <textarea id="serviceDescription" placeholder="Describe your service in detail..." rows="4" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="servicePrice">Price (₹) *</label>
+                        <input type="number" id="servicePrice" placeholder="100" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="serviceContact">Contact (WhatsApp/Instagram) *</label>
+                        <input type="text" id="serviceContact" placeholder="+91 9876543210 or @username" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">🚀 Post Service</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Browse Services Tab -->
+        <div class="tab-content" id="browseTab">
+            <div class="browse-section">
+                <div class="browse-filters">
+                    <select id="categoryFilter" onchange="filterServices()">
+                        <option value="">All Categories</option>
+                        <option value="video-editing">📹 Video Editing</option>
+                        <option value="photo-editing">📸 Photo Editing</option>
+                        <option value="graphic-design">🎨 Graphic Design</option>
+                        <option value="study-help">📚 Study Help</option>
+                        <option value="game-coaching">🎮 Game Coaching</option>
+                        <option value="content-writing">✍️ Content Writing</option>
+                        <option value="social-media">📱 Social Media</option>
+                        <option value="other">🔧 Other</option>
+                    </select>
+                    
+                    <select id="priceFilter" onchange="filterServices()">
+                        <option value="">All Prices</option>
+                        <option value="0-100">₹0 - ₹100</option>
+                        <option value="100-500">₹100 - ₹500</option>
+                        <option value="500-1000">₹500 - ₹1000</option>
+                        <option value="1000+">₹1000+</option>
+                    </select>
+                </div>
+                
+                <div class="services-grid" id="servicesGrid">
+                    <div class="no-services">
+                        <div class="empty-state">
+                            <h3>💼 No Services Yet</h3>
+                            <p>Be the first to offer your skills and start earning!</p>
+                            <button class="btn btn-primary" onclick="switchTab('offer')">Offer Service</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="peoplefinder.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span class="nav-label">Find</span>
+        </a>
+        <a href="freelance.html" class="nav-item active">
+            <span class="nav-icon">💼</span>
+            <span class="nav-label">Work</span>
+        </a>
+        <a href="gamezone.html" class="nav-item">
+            <span class="nav-icon">🎮</span>
+            <span class="nav-label">Games</span>
+        </a>
+        <a href="teachers.html" class="nav-item">
+            <span class="nav-icon">🧑‍🏫</span>
+            <span class="nav-label">Teachers</span>
+        </a>
+    </nav>
+
+    <script src="main.js"></script>

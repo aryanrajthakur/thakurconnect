@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FunZone - VVRS SkillConnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <button class="back-btn" onclick="history.back()">←</button>
+            <h1>🎉 FunZone</h1>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </header>
+
+        <!-- Fun Sections -->
+        <div class="fun-sections">
+            <!-- Daily Meme -->
+            <section class="fun-card">
+                <h3>😂 Daily Meme</h3>
+                <div class="meme-container" id="memeContainer">
+                    <div class="meme-placeholder">Loading meme...</div>
+                </div>
+                <button class="btn btn-secondary" onclick="getNewMeme()">🔄 New Meme</button>
+            </section>
+
+            <!-- Poll of the Day -->
+            <section class="fun-card">
+                <h3>🗳️ Poll of the Day</h3>
+                <div class="poll-container" id="pollContainer">
+                    <!-- Poll will be populated by JavaScript -->
+                </div>
+            </section>
+
+            <!-- Quiz of the Day -->
+            <section class="fun-card">
+                <h3>❓ Quiz of the Day</h3>
+                <div class="quiz-container" id="quizContainer">
+                    <!-- Quiz will be populated by JavaScript -->
+                </div>
+                <div class="quiz-score" id="quizScore" style="display: none;">
+                    <h4>Your Score: <span id="scoreValue">0</span>/5</h4>
+                </div>
+            </section>
+
+            <!-- Student Showcase -->
+            <section class="fun-card">
+                <h3>🎨 Student Showcase</h3>
+                <div class="showcase-container" id="showcaseContainer">
+                    <div class="showcase-grid">
+                        <div class="showcase-item">
+                            <div class="showcase-image">🎨</div>
+                            <h4>Digital Art</h4>
+                            <p>Amazing artwork by students</p>
+                        </div>
+                        <div class="showcase-item">
+                            <div class="showcase-image">📸</div>
+                            <h4>Photography</h4>
+                            <p>Capturing school moments</p>
+                        </div>
+                        <div class="showcase-item">
+                            <div class="showcase-image">✍️</div>
+                            <h4>Creative Writing</h4>
+                            <p>Stories and poems</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fun Stats -->
+            <section class="fun-card">
+                <h3>📊 Fun Stats</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number" id="memesViewed">0</span>
+                        <span class="stat-label">Memes Viewed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="pollsVoted">0</span>
+                        <span class="stat-label">Polls Voted</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="quizzesTaken">0</span>
+                        <span class="stat-label">Quizzes Taken</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="funStreak">0</span>
+                        <span class="stat-label">Day Streak</span>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="peoplefinder.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span class="nav-label">Find</span>
+        </a>
+        <a href="freelance.html" class="nav-item">
+            <span class="nav-icon">💼</span>
+            <span class="nav-label">Work</span>
+        </a>
+        <a href="gamezone.html" class="nav-item">
+            <span class="nav-icon">🎮</span>
+            <span class="nav-label">Games</span>
+        </a>
+        <a href="teachers.html" class="nav-item">
+            <span class="nav-icon">🧑‍🏫</span>
+            <span class="nav-label">Teachers</span>
+        </a>
+    </nav>
+
+    <script src="main.js"></script>

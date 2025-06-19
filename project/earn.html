@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earn & Boost - VVRS SkillConnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <button class="back-btn" onclick="history.back()">←</button>
+            <h1>💸 Earn & Boost</h1>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </header>
+
+        <!-- Earn Sections -->
+        <div class="earn-sections">
+            <!-- Feature Profile -->
+            <section class="earn-card">
+                <div class="earn-header">
+                    <h3>⭐ Feature Your Profile</h3>
+                    <span class="price-tag">₹50</span>
+                </div>
+                <p>Get your profile featured on the homepage and increase visibility by 10x!</p>
+                <ul class="benefits-list">
+                    <li>✅ Homepage spotlight for 7 days</li>
+                    <li>✅ Priority in search results</li>
+                    <li>✅ Special featured badge</li>
+                    <li>✅ More profile views and connections</li>
+                </ul>
+                <button class="btn btn-primary" onclick="featureProfile()">🚀 Feature Now</button>
+            </section>
+
+            <!-- Promote Skills -->
+            <section class="earn-card">
+                <div class="earn-header">
+                    <h3>📈 Promote Your Skills</h3>
+                    <span class="price-tag">₹30</span>
+                </div>
+                <p>Boost your freelance services to appear at the top of search results!</p>
+                <ul class="benefits-list">
+                    <li>✅ Top placement in freelance hub</li>
+                    <li>✅ Highlighted service card</li>
+                    <li>✅ 5x more visibility</li>
+                    <li>✅ Priority for 5 days</li>
+                </ul>
+                <button class="btn btn-primary" onclick="promoteSkills()">📈 Promote Now</button>
+            </section>
+
+            <!-- Buy Templates -->
+            <section class="earn-card">
+                <div class="earn-header">
+                    <h3>🎨 Premium Templates</h3>
+                    <span class="price-tag">₹20-100</span>
+                </div>
+                <p>Professional templates for your creative projects!</p>
+                <div class="templates-grid">
+                    <div class="template-item">
+                        <h4>📹 Video Templates</h4>
+                        <p>Intro/Outro templates</p>
+                        <span class="template-price">₹50</span>
+                    </div>
+                    <div class="template-item">
+                        <h4>🎨 Design Templates</h4>
+                        <p>Logos, banners, posts</p>
+                        <span class="template-price">₹30</span>
+                    </div>
+                    <div class="template-item">
+                        <h4>📱 Social Media Kit</h4>
+                        <p>Complete branding kit</p>
+                        <span class="template-price">₹100</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary" onclick="buyTemplates()">🛒 Browse Templates</button>
+            </section>
+
+            <!-- Affiliate Tools -->
+            <section class="earn-card">
+                <div class="earn-header">
+                    <h3>🛍️ Recommended Tools</h3>
+                    <span class="affiliate-tag">Earn Commission</span>
+                </div>
+                <p>Essential tools for content creators and gamers!</p>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <h4>🎤 Gaming Microphone</h4>
+                        <p>Professional audio quality</p>
+                        <button class="btn btn-secondary" onclick="openAffiliate('mic')">View Deal</button>
+                    </div>
+                    <div class="tool-item">
+                        <h4>📱 Mobile Editing Apps</h4>
+                        <p>Premium subscriptions</p>
+                        <button class="btn btn-secondary" onclick="openAffiliate('apps')">Get Apps</button>
+                    </div>
+                    <div class="tool-item">
+                        <h4>🎮 Gaming Accessories</h4>
+                        <p>Controllers, headsets, etc.</p>
+                        <button class="btn btn-secondary" onclick="openAffiliate('gaming')">Shop Now</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Donation Section -->
+            <section class="earn-card donation-card">
+                <div class="earn-header">
+                    <h3>❤️ Support the Platform</h3>
+                    <span class="donation-tag">Voluntary</span>
+                </div>
+                <p>Help us keep VVRS SkillConnect free and growing! Your support means everything.</p>
+                <div class="donation-amounts">
+                    <button class="amount-btn" onclick="donate(10)">₹10</button>
+                    <button class="amount-btn" onclick="donate(25)">₹25</button>
+                    <button class="amount-btn" onclick="donate(50)">₹50</button>
+                    <button class="amount-btn" onclick="donate(100)">₹100</button>
+                </div>
+                <button class="btn btn-primary" onclick="customDonation()">💝 Custom Amount</button>
+            </section>
+
+            <!-- Other Apps -->
+            <section class="earn-card">
+                <div class="earn-header">
+                    <h3>📚 VVRS Study Boost</h3>
+                    <span class="app-tag">Sister App</span>
+                </div>
+                <p>Boost your academic performance with our dedicated study platform!</p>
+                <ul class="benefits-list">
+                    <li>✅ Interactive study materials</li>
+                    <li>✅ Practice tests and quizzes</li>
+                    <li>✅ Subject-wise resources</li>
+                    <li>✅ Performance tracking</li>
+                </ul>
+                <button class="btn btn-primary" onclick="openStudyBoost()">📖 Open Study Boost</button>
+            </section>
+        </div>
+    </div>
+
+    <!-- Payment Modal -->
+    <div class="modal" id="paymentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>💳 Complete Payment</h3>
+                <button class="close-btn" onclick="closePaymentModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="payment-details">
+                    <h4 id="paymentTitle">Service Title</h4>
+                    <p id="paymentDescription">Service description</p>
+                    <div class="payment-amount">
+                        <span>Amount: ₹</span><span id="paymentAmount">0</span>
+                    </div>
+                </div>
+                <div class="qr-section">
+                    <h4>📱 Scan QR to Pay</h4>
+                    <div class="qr-container">
+                        <img src="public/assets/qr-codes/qr.jpg" alt="Payment QR Code" class="payment-qr">
+                    </div>
+                    <p class="qr-info">UPI ID: 9507475892@naviaxis</p>
+                    <p class="qr-name">AJIT KUMAR SO MANOJ PRASAD</p>
+                </div>
+                <div class="payment-actions">
+                    <button class="btn btn-primary" onclick="confirmPayment()">✅ I've Paid</button>
+                    <button class="btn btn-secondary" onclick="closePaymentModal()">❌ Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="peoplefinder.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span class="nav-label">Find</span>
+        </a>
+        <a href="freelance.html" class="nav-item">
+            <span class="nav-icon">💼</span>
+            <span class="nav-label">Work</span>
+        </a>
+        <a href="gamezone.html" class="nav-item">
+            <span class="nav-icon">🎮</span>
+            <span class="nav-label">Games</span>
+        </a>
+        <a href="teachers.html" class="nav-item">
+            <span class="nav-icon">🧑‍🏫</span>
+            <span class="nav-label">Teachers</span>
+        </a>
+    </nav>
+
+    <script src="main.js"></script>

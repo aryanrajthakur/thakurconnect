@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Profile - VVRS SkillConnect</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <button class="back-btn" onclick="history.back()">←</button>
+            <h1>👤 Create Your Profile</h1>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </header>
+
+        <div class="profile-form-container">
+            <form id="profileForm" class="profile-form">
+                <div class="form-section">
+                    <h3>📝 Basic Information</h3>
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="className">Class *</label>
+                        <select id="className" required>
+                            <option value="">Select Class</option>
+                            <option value="6th">6th Grade</option>
+                            <option value="7th">7th Grade</option>
+                            <option value="8th">8th Grade</option>
+                            <option value="9th">9th Grade</option>
+                            <option value="10th">10th Grade</option>
+                            <option value="11th">11th Grade</option>
+                            <option value="12th">12th Grade</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Bio</label>
+                        <textarea id="bio" placeholder="Tell us about yourself..." rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>🎯 Skills & Interests</h3>
+                    <div class="form-group">
+                        <label for="skills">Skills (comma separated)</label>
+                        <input type="text" id="skills" placeholder="e.g., Video Editing, Photography, Coding">
+                    </div>
+                    <div class="form-group">
+                        <label for="interests">Interests</label>
+                        <input type="text" id="interests" placeholder="e.g., Gaming, Music, Sports">
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>🎮 Gaming Information</h3>
+                    <div class="form-group">
+                        <label for="gamingIds">Gaming IDs</label>
+                        <textarea id="gamingIds" placeholder="PUBG: 123456789&#10;Free Fire: abcd1234&#10;COD: player123" rows="3"></textarea>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>📱 Social Links</h3>
+                    <div class="form-group">
+                        <label for="instagram">Instagram</label>
+                        <input type="text" id="instagram" placeholder="@username">
+                    </div>
+                    <div class="form-group">
+                        <label for="youtube">YouTube</label>
+                        <input type="text" id="youtube" placeholder="Channel name or link">
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp</label>
+                        <input type="tel" id="whatsapp" placeholder="+91 9876543210">
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" onclick="previewProfile()">👁️ Preview</button>
+                    <button type="submit" class="btn btn-primary">💾 Save Profile</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Profile Preview Modal -->
+        <div class="modal" id="previewModal">
+            <div class="modal-content large">
+                <div class="modal-header">
+                    <h3>👁️ Profile Preview</h3>
+                    <button class="close-btn" onclick="closePreviewModal()">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div id="profilePreview" class="profile-card"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div class="modal" id="successModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>🎉 Profile Created!</h3>
+                </div>
+                <div class="modal-body">
+                    <p>Your profile has been created successfully!</p>
+                    <div class="success-actions">
+                        <button class="btn btn-primary" onclick="shareProfile()">📤 Share Profile</button>
+                        <button class="btn btn-secondary" onclick="viewAllProfiles()">👥 View All Profiles</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="peoplefinder.html" class="nav-item">
+            <span class="nav-icon">🔍</span>
+            <span class="nav-label">Find</span>
+        </a>
+        <a href="freelance.html" class="nav-item">
+            <span class="nav-icon">💼</span>
+            <span class="nav-label">Work</span>
+        </a>
+        <a href="gamezone.html" class="nav-item">
+            <span class="nav-icon">🎮</span>
+            <span class="nav-label">Games</span>
+        </a>
+        <a href="teachers.html" class="nav-item">
+            <span class="nav-icon">🧑‍🏫</span>
+            <span class="nav-label">Teachers</span>
+        </a>
+    </nav>
+
+    <script src="main.js"></script>
